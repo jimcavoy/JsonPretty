@@ -9,6 +9,10 @@
 #include <fstream>
 #include <memory>
 
+#ifdef WIN32
+#define strcpy_s strcpy
+#endif
+
 namespace json = boost::json;
 
 json::value parse_file( char const* filename )
@@ -135,10 +139,10 @@ int main(int argc, char** argv)
     switch (argc)
     {
     case 1: 
-        strcpy_s(filename, "-");
+        strcpy(filename, "-");
         break;
     case 2:
-        strcpy_s(filename, argv[1]);
+        strcpy(filename, argv[1]);
         break;
     default:
         std::cerr << "Usage: JsonPretty <jsonfile>" << std::endl;
