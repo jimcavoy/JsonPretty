@@ -1,7 +1,15 @@
 # JsonPretty
-__JsonPretty__ is a console application the will pretty-print a json file.
+__JsonPretty__ is a console application that will pretty-print a json file to standard console output.
 Most of the code is attributed to the Boost JSON __Pretty__ example code, 
 https://www.boost.org/doc/libs/1_84_0/libs/json/doc/html/json/examples.html#json.examples.pretty
+
+## Usage
+
+### 1. Read a file
+    JsonPretty <jsonfile> > pretty.json
+
+### 2. Pipe input
+    SomeApp | JsonPretty > pretty.json
 
 ## Prerequisites
 This project requires the following:
